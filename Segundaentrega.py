@@ -6,7 +6,4 @@ def sumador(num):
         suma = suma + x
     print("El resultado es:", suma)
     return suma
-start = time.time()
 sumador(numero)
-end = time.time()
-print("Tiempo consumido: {} seg".format(end-start))
