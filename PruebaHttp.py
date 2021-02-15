@@ -8,7 +8,8 @@ def buscar_archivos(ruta):
     archivos = os.listdir(ruta) 
     for archivo in archivos:
         if '.user' in archivo:
-            archivos_texto.append(archivo) 
+            archivos_texto[len(archivos_texto):] = [archivo]
+            #archivos_texto.append(archivo)
     return archivos_texto
 
 for carpeta in nombres_carpetas:
@@ -18,15 +19,17 @@ for carpeta in nombres_carpetas:
         for texto in archivos_texto:
             with open(ruta + '/' + texto, 'r') as f:
                 mensaje = f.read()
-                guardar = mensaje.split(',', 2)
+                guardar = mensaje.split(',', 3)
                 guardar[0] = guardar[0].replace('{"name":', "")
                 guardar[0] = guardar[0].replace('"', "")
                 guardar[1] = guardar[1].replace('"email":', "")
                 guardar[1] = guardar[1].replace('"', "")
+                guardar[2] = guardar[2].replace('"rol":', "")
+                guardar[2] = guardar[2].replace('"', "")
                 f.close()
                 #datos.append(guardar[0])
                 #datos.append(guardar[1])
-                for i in range(0, 2):
+                for i in range(0, 3):
                     datos[len(datos):] = [guardar[i]]
                 #datos[len(datos):] = [guardar[0]]
                 #datos[len(datos):] = [guardar[1]]
@@ -34,13 +37,16 @@ for carpeta in nombres_carpetas:
 d = open('/Users/Pablo Velasquez/Downloads/Python/Usuarios.txt', 'w')
 x = 0
 for escribir in datos:
-    if x % 2 == 0:
+    if x % 3 == 0:
         d.write(str(int(x-x*0.5)))
         d.write("\n")
         d.write('Nombre: ' + escribir)
         d.write("\n")
-    if x % 2 == 1:
+    if x % 3 == 1:
         d.write('Email: ' + escribir)
+        d.write("\n")
+    if x % 3 == 2:
+        d.write('rol: ' + escribir)
         d.write("\n")
     x = x+1
 d.close()
