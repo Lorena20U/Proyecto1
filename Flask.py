@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, request
-usuarios = ["Hola", "Lorena"]
-contras = ["1", "2"]
-Roles = ["Vendedor", "Comprador"]
-objetos = ["telefono", "cama"]
-costo = ["5", "3"]
+usuarios = []
+contras = []
+Roles = []
+objetos = []
+costo = []
 enviar = False
 pagado = False
 solicitud = False
