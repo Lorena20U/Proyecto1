@@ -1,0 +1,21 @@
+{
+	"info": {
+		"_postman_id": "634afa65-68c8-4417-991d-0b96f6c8b824",
+		"name": "Proy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Proy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "ED"
+			},
+			"response": []
+		}
+	]
+}
